@@ -1,0 +1,10 @@
+# PowerBot - Bot que responde perguntas idiotas!
+# Criado por MrPowerGamerBR - mrpowergamerbr.blogspot.com
+PowerBot:
+    Prefixo: "&8[&eAjudante&8] &dPowerBot&e:"
+    SomenteParaPlayer: false
+    CancelarMensagem: false
+    RegEx:
+        - ".*(c(o)?m(o|u)) (eu |mim )?(poss(o|u) )?(constr(oi|uir)|prote(g|j)(o|er)|compr(o|a)(r)?) (um(a)? |minha |meu )?(casa(s)?|terreno(s)?|(a|á)reas).*---@prefixo &2@player&a, você pode proteger um terreno com a &6pá de ouro&a que vem no &c/kit noob&a!"
+        - ".*(c(o)?m(o|u)) (eu |mim )?(poss(o|u) )?(ganh(o|ar)|conseguir|consigo|peg(o|a|ar)) (dinheir(o|u)|grana|dindin|mone(y|i)).*---@prefixo &2@player&a, você pode ganhar dinheiro vendendo seus itens na &6/loja&a!"
+        - ".*(c(o)?m(o|u)) (eu |mim )?(poss(o|u) )?(ganh(o|ar)|peg(o|ar)|arran(g|j)ar) (um )?(mascot(e|i)|pet|mob(i)?|bich(o|u)).*---@prefixo &2@player&a, para você pegar um Pet, você precisa matar um &aMob&a com um &6laço de cavalo&a! &aVocê pode pegar um laço com &c/kit noob&a!"
