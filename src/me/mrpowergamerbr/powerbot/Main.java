@@ -25,12 +25,12 @@ public class Main extends JavaPlugin implements Listener {
 		// Anti-Troca de plugin.yml
 		Plugin powerbotlite = getServer().getPluginManager().getPlugin("NaumEditeOk".replace("Na", "Po").replace("Ok", "t").replace("te", "o").replace("umE", "wer").replace("di", "B"));
 		if (powerbotlite == null) {
-			getLogger().log(Level.SEVERE, "Não, você não pode alterar o nome do PowerMoedas para você poder \"fingir\" que foi você que fez.");
+			getLogger().log(Level.SEVERE, "NÃ£o, vocÃª nÃ£o pode alterar o nome do PowerBot para vocÃª poder \"fingir\" que foi vocÃª que fez.");
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
 		
-		Bukkit.getConsoleSender().sendMessage("§8[§b§lPower§c§lBot§8] §7Iniciando PowerBot v" + getDescription().getVersion());
+		Bukkit.getConsoleSender().sendMessage("Â§8[Â§bÂ§lPowerÂ§cÂ§lBotÂ§8] Â§7Iniciando PowerBot v" + getDescription().getVersion());
 		//getCommand("powerbotreload").setExecutor(new Comandos());
 		saveDefaultConfig();
 		PowerUtils.reloadMe();
@@ -47,11 +47,11 @@ public class Main extends JavaPlugin implements Listener {
 	    {
 			if (sender.hasPermission("PowerBot.Reload")) {
 			PowerUtils.reloadMe();
-			sender.sendMessage("§aReload Concluído!");
+			sender.sendMessage("Â§aReload ConcluÃ­do!");
 			return true;
 			}
 			else {
-				sender.sendMessage("§cSem §4Permissão§c!");
+				sender.sendMessage("Â§cSem Â§4PermissÃ£oÂ§c!");
 				return true;
 			}
 	    }
