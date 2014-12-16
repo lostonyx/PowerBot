@@ -5,6 +5,7 @@ package me.mrpowergamerbr.powerbot;
 import java.util.logging.Level;
 
 import me.mrpowergamerbr.powerbot.Listeners.ChatListener;
+import me.mrpowergamerbr.powerbot.Listeners.ChatListenerLegend;
 import me.mrpowergamerbr.powerbot.Utils.PowerUtils;
 
 import org.bukkit.Bukkit;
@@ -17,24 +18,27 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
 	
-	//public String atomtag = null;
-
-	
 	@Override
 	public void onEnable() {
 		// Anti-Troca de plugin.yml
 		Plugin powerbotlite = getServer().getPluginManager().getPlugin("NaumEditeOk".replace("Na", "Po").replace("Ok", "t").replace("te", "o").replace("umE", "wer").replace("di", "B"));
 		if (powerbotlite == null) {
-			getLogger().log(Level.SEVERE, "NÃ£o, vocÃª nÃ£o pode alterar o nome do PowerBot para vocÃª poder \"fingir\" que foi vocÃª que fez.");
+			getLogger().log(Level.SEVERE, "Não, você não pode alterar o nome do PowerMoedas para você poder \"fingir\" que foi você que fez.");
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
 		
-		Bukkit.getConsoleSender().sendMessage("Â§8[Â§bÂ§lPowerÂ§cÂ§lBotÂ§8] Â§7Iniciando PowerBot v" + getDescription().getVersion());
+		Bukkit.getConsoleSender().sendMessage("§8[§b§lPower§c§lBot§8] §7Iniciando PowerBot v" + getDescription().getVersion());
 		//getCommand("powerbotreload").setExecutor(new Comandos());
 		saveDefaultConfig();
 		PowerUtils.reloadMe();
-		getServer().getPluginManager().registerEvents(new ChatListener(), this);
+		// Detectar se o Legendchat está ativado
+		if (getServer().getPluginManager().getPlugin("Legendchat") != null) {
+			getServer().getPluginManager().registerEvents(new ChatListenerLegend(), this);
+		}
+		else {
+			getServer().getPluginManager().registerEvents(new ChatListener(), this);
+		}
 	}
 	
 	@Override
@@ -47,11 +51,11 @@ public class Main extends JavaPlugin implements Listener {
 	    {
 			if (sender.hasPermission("PowerBot.Reload")) {
 			PowerUtils.reloadMe();
-			sender.sendMessage("Â§aReload ConcluÃ­do!");
+			sender.sendMessage("§aReload Concluído!");
 			return true;
 			}
 			else {
-				sender.sendMessage("Â§cSem Â§4PermissÃ£oÂ§c!");
+				sender.sendMessage("§cSem §4Permissão§c!");
 				return true;
 			}
 	    }

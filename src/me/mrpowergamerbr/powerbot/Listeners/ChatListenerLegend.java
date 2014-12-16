@@ -14,17 +14,17 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import br.com.devpaulo.legendchat.api.events.ChatMessageEvent;
 
-public class ChatListener extends PowerUtils implements Listener {
+public class ChatListenerLegend extends PowerUtils implements Listener {
 	public static ArrayList<String> players = new ArrayList();
 	
 	
-	// Vanilla Minecraft Chat
+	// Legendchat
 	@EventHandler(priority=EventPriority.LOWEST, ignoreCancelled=true)
-	private void onChat(AsyncPlayerChatEvent e)
+	private void onChat(ChatMessageEvent e)
 	{
 		if (e.isCancelled() == false) {
 			String mensagem = e.getMessage();
-			final Player player = e.getPlayer();
+			final Player player = e.getSender();
 			for (String regex : PowerUtils.regexlist) {
 				final String[] splitr = regex.split("---");
 				//Bukkit.broadcastMessage(splitr[0] + " + " + splitr[1]);
