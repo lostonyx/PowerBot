@@ -1,6 +1,7 @@
 name: PowerBot
 main: me.mrpowergamerbr.powerbot.Main
 version: 1.0
+softdepends: Legendchat
 commands:
    powerbotreload:
       description: Reload do PowerBot
